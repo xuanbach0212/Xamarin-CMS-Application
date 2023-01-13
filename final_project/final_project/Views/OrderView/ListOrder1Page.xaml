@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.OrderView.ListOrder1Page" NavigationPage.HasNavigationBar="false">
+
+        <RefreshView x:Name="Refresh_view" RefreshColor="#2196F3" Refreshing="Refresh_view_Refreshing">
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Current Order " HeightRequest="35" FontSize="18" FontAttributes="Bold" Padding="12,0,0,0" BackgroundColor="#E1EBEC" VerticalTextAlignment="Center"/>
+                <ListView x:Name="lst_order" 
+              HasUnevenRows="True" 
+              SeparatorVisibility="Default" 
+                      BackgroundColor="Transparent" 
+                      
+             >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5,5,5,5">
+                                    <SwipeView Threshold="80">
+                                        <SwipeView.LeftItems>
+                                            <SwipeItemView x:Name ="see_btn"  BackgroundColor="Transparent">
+                                                <Grid RowDefinitions="Auto,*" WidthRequest="100">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                    <BoxView CornerRadius="20,0,20,0" Color="#ffc107" Grid.RowSpan="2" />
+                                                    <Image VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,50,0,0" Source="eye_icon"/>
+                                                </Grid>
+                                            </SwipeItemView>
+
+                                        </SwipeView.LeftItems>
+                                        <SwipeView.RightItems>
+                                            <SwipeItemView x:Name ="delete_btn"  BackgroundColor="Transparent">
+                                                <Grid RowDefinitions="Auto,*" WidthRequest="100">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" CommandParameter="{Binding . }" />
+                                                    </Grid.GestureRecognizers>
+                                                    <BoxView CornerRadius="0,20,0,20" Color="#999999" Grid.RowSpan="2" />
+                                                    <Image VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,50,0,0" Source="delete_icon"/>
+                                                </Grid>
+                                            </SwipeItemView>
+                                        </SwipeView.RightItems>
+
+
+                                        <Grid RowSpacing="0" Padding="0,0,15,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                                <RowDefinition Height="30"></RowDefinition>
+                                                <RowDefinition Height="40"></RowDefinition>
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="5"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="110"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding id,StringFormat='#{0}'}" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" FontSize="13"/>
+                                            <Label Text="{Binding date}" VerticalOptions="Center"  Grid.Row="0" Grid.Column="2"/>
+                                            <Label Text="{Binding user.name}" VerticalOptions="Center"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" FontSize="25" TextColor="#333333"/>
+                                            <Label Text="{Binding address,StringFormat='Address: {0}'}" VerticalOptions="Center"  Grid.Row="2" Grid.Column="1" FontSize="17"/>
+                                            <Label Text="{Binding status, StringFormat='Status: {0}'}" FontAttributes="Bold"  Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" VerticalOptions="CenterAndExpand" >
+                                            </Label>
+                                            <Label Text="{Binding total_price,StringFormat='Total Price: $ {0}'}" Grid.Row="3" Grid.Column="1" TextColor="#285D34" FontAttributes="Bold" FontSize="18"/>
+                                            <Image Source="phone_icon" Grid.Row="3" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Start" Margin="13,0,0,5"></Image>
+                                            <Image Source="destination_icon" Grid.Row="3" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End"  Margin="0,0,13,5"></Image>
+                                            <BoxView Color="#03a9f4" Grid.RowSpan="4" Grid.Column="0" />
+                                        </Grid>
+                                    </SwipeView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.ProductView.CrudProductPage">
+    <ContentPage.Content>
+        <StackLayout >
+            <Label Text="Enter Product Detail Here " HeightRequest="40" FontSize="18" FontAttributes="Bold" Padding="12,0,0,0" BackgroundColor="#E1EBEC" VerticalTextAlignment="Center" />
+            <Frame BackgroundColor="Transparent" Padding="10" Margin="10" BorderColor="#E1EBEC" CornerRadius="5" HasShadow="True" >
+                <Grid RowSpacing="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="product_name_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_name"  Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="0" Placeholder="Enter Product Name....."/>
+                    <Image Grid.Column="0" Grid.Row="1" Source="categories_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Picker x:Name="Crud_Category" Grid.Column="1"  Grid.ColumnSpan="3" Grid.Row="1" Title="Pick Category Here...." ItemDisplayBinding="{Binding name}" ItemsSource="{Binding CategoryModel}" SelectedIndexChanged="Crud_Category_SelectedIndexChanged" SelectedItem="{Binding name}"/>
+                    <Image Grid.Column="0" Grid.Row="2" Source="stock_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_stock" Keyboard="Numeric" Placeholder="Enter Stock..." Grid.Column="1" Grid.Row="2"/>
+                    <Image Grid.Column="2" Grid.Row="2" Source="price_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_price" Keyboard="Numeric" Placeholder="Enter Price..." Grid.Column="3" Grid.Row="2"/>
+                    <Image Grid.Column="0" Grid.Row="3" Source="brand_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_brand" Placeholder="Add Brand..." Grid.Column="1" Grid.Row="3"/>
+                    <Image Grid.Column="2" Grid.Row="3" Source="status_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_status" Placeholder="Add Status..." Grid.Column="3" Grid.Row="3"/>
+                    <Button Text="Pick Image" Grid.Column="3" Grid.Row="4" Clicked="Button_Clicked" BackgroundColor="#82C3EC" CornerRadius="10" FontAttributes="Bold"  TextColor="White"  FontSize="15">
+                    </Button>
+                    <Image x:Name="resultImage" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+                    <Image Grid.Column="0" Grid.Row="7  " Source="detail_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_des" Placeholder="Describe Product..." Grid.ColumnSpan="3" Grid.Row="7" Grid.Column="1"/>
+
+                </Grid>
+            </Frame>
+
+
+            <Button Padding="20,15,20,15" Margin="10" CornerRadius="20" BackgroundColor="#4B56D2" Text="Add Product" HorizontalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked_1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

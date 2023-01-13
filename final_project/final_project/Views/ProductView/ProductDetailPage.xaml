@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.ProductView.ProductDetailPage" NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout x:Name="stl_product">
+        
+            <Frame BackgroundColor="White" HasShadow="True" Margin="10,10,10,10" CornerRadius="20">
+                <StackLayout>
+                    <Grid RowSpacing="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="120"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="300"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Grid.ColumnSpan="2" x:Name="img" Source="{Binding img}" WidthRequest="350" HorizontalOptions="CenterAndExpand"></Image>
+                        <Label Grid.Row="1" x:Name="lbl_name" Text="{Binding name}" VerticalOptions="Center" FontSize= "23" FontAttributes="Bold" TextColor="#333333"></Label>
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="lbl_price" Text="{Binding price}"   VerticalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#285D34"></Label>
+                        <Label Grid.Row="2" x:Name="lbl_category" Text="{Binding category.name}" VerticalOptions="Center" FontSize= "15"  FontAttributes="Italic"></Label>
+                        <Label Grid.Row="2" Grid.Column="1" x:Name="lbl_brand" Text="{Binding brand}"   VerticalOptions="Center" FontSize="15"  FontAttributes="Bold"></Label>
+                        <Label Grid.Row="3" x:Name="lbl_date" Text="{Binding date}"   VerticalOptions="Center" FontSize="15" FontAttributes="Bold" ></Label>
+                        <Label Grid.Row="4" x:Name="lbl_des" Text="{Binding describe}" VerticalOptions="Center" FontSize= "20"></Label>
+
+
+                        <Label x:Name="lbl_stock" Grid.Row="5" Grid.Column="1" Text="{Binding stock}" FontSize="20" TextColor="#B3202C"   FontAttributes="Bold"></Label>
+                        
+                        
+
+                    </Grid>
+                    <Button Text="Done" BackgroundColor="#4B9B69" CornerRadius="20" TextColor="white" FontAttributes="Bold" Padding="20,15,20,15" Margin="80,40,80,0" Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.NewFolder.CrudCategoryPage" BackgroundColor="#F1F6F5">
+    <ContentPage.Content>
+        <StackLayout >
+            <Label Text="Enter Category Detail Here " HeightRequest="40" FontSize="18" FontAttributes="Bold" Padding="12,0,0,0" BackgroundColor="#E1EBEC" VerticalTextAlignment="Center" />
+            <Frame BackgroundColor="Transparent" Padding="10" Margin="10" BorderColor="#E1EBEC" CornerRadius="5" HasShadow="True" >
+                <Grid RowSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="categorization_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry x:Name="ent_name" Text="{Binding name}" Grid.Column="1" Grid.Row="0" Placeholder="Enter Category Name....."/>
+                    <Image Grid.Column="0" Grid.Row="1" Source="icon_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Picker x:Name="Crud_Category_Icon"  Grid.Column="1" Grid.Row="1" Title="Choose Your Icon Here...." ItemDisplayBinding="{Binding name}" SelectedIndexChanged="Crud_Category_Icon_SelectedIndexChanged"/>
+                    <Image Grid.Column="0" Grid.Row="2" Source="color_icon.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Picker x:Name="Crud_Category_Color" Grid.Column="1" Grid.Row="2" Title="Choose Your Color Here...." ItemDisplayBinding="{Binding name}" SelectedIndexChanged="Crud_Category_Color_SelectedIndexChanged"/>
+                </Grid>
+            </Frame>
+
+            <Label Text="Example of Category "  HeightRequest="40" FontSize="18" FontAttributes="Bold" Padding="12,0,0,0" BackgroundColor="#E1EBEC" VerticalTextAlignment="Center"/>
+            <Frame CornerRadius="20" HasShadow="True" BackgroundColor="#82C3EC" Margin="10" Padding="20,15,20,15">
+                <Grid VerticalOptions="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="icon_category"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Image>
+                    <Label x:Name="lbl_example" Text="Example Category" FontAttributes="Bold" FontSize="20" TextColor="White"  Grid.Row="0" Grid.Column="1" />
+                    <Label Text="2022-12-31 12:23"  Grid.Row="1" Grid.Column="1"/>
+                    <Frame x:Name="color_category" BackgroundColor="{Binding color}" HeightRequest="35" WidthRequest="35" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0"  Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
+                    </Frame>
+                </Grid>
+
+            </Frame>
+            <Frame CornerRadius="20" HasShadow="True" BackgroundColor="#82C3EC" Margin="10" Padding="20,15,20,15">
+
+                <Grid VerticalOptions="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image  Source="light_icon" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Image>
+                    <Label   Text="Category Name" FontAttributes="Bold" FontSize="20" TextColor="White"  Grid.Row="0" Grid.Column="1" />
+                    <Label Text="2022-12-31 12:23"  Grid.Row="1" Grid.Column="1"/>
+                    <Frame HeightRequest="35" WidthRequest="35" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="green" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Button Padding="20,15,20,15" Margin="10" CornerRadius="20" BackgroundColor="#4B56D2" Text="Add Category" HorizontalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

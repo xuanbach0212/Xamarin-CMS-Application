@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.NewFolder.ListCategoryPage"
+             BackgroundColor="#F1F6F5"
+            >
+
+    <RefreshView x:Name="Refresh_view" RefreshColor="#2196F3" Refreshing="RefreshView_Refreshing">
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Current Category " HeightRequest="40" FontSize="18" FontAttributes="Bold" Padding="12,0,0,0" BackgroundColor="#E1EBEC" VerticalTextAlignment="Center"/>
+                <ListView BackgroundColor="Transparent" 
+              HasUnevenRows="True" 
+              SeparatorVisibility="None" 
+              x:Name="lstView_Category"
+              ItemSelected="lstView_Category_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid Padding="10">
+                                    <SwipeView Threshold="80">
+                                        <SwipeView.RightItems>
+                                            <SwipeItemView x:Name ="delete_btn"  BackgroundColor="Transparent">
+                                                <Grid RowDefinitions="Auto,*" WidthRequest="100">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer CommandParameter="{Binding . }" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                                    </Grid.GestureRecognizers>
+                                                    <BoxView CornerRadius="0,20,0,20" Color="#999999" Grid.RowSpan="2" />
+                                                    <Image VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,30,0,0" Source="delete_icon"/>
+                                                </Grid>
+                                            </SwipeItemView>
+                                        </SwipeView.RightItems>
+                                        <Frame CornerRadius="20" HasShadow="True" BackgroundColor="#82C3EC" Padding="20,15,20,15">
+
+                                            <Grid VerticalOptions="Center" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                                    <ColumnDefinition Width="200"></ColumnDefinition>
+                                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image  Source="{Binding icon}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                </Image>
+                                                <Label Text="{Binding name}" FontAttributes="Bold" FontSize="20" TextColor="White"  Grid.Row="0" Grid.Column="1" />
+                                                <Label Text="{Binding date}"  Grid.Row="1" Grid.Column="1"/>
+                                                <Frame HeightRequest="35" WidthRequest="35" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="{Binding color}" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                    </SwipeView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.ProfileView.EditProfilePage">
+    <ContentPage.Content>
+
+        <StackLayout x:Name="stl_profile">
+
+            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="5,0,5,0">
+                <StackLayout>
+                    <Grid RowSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Grid.ColumnSpan="2" Source="Profile_icon" HorizontalOptions="CenterAndExpand"></Image>
+                        <Image Grid.Row="0" Grid.ColumnSpan="2"  Source="plus_icon" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="120,0,0,20"></Image>
+                        <Label Grid.Row="1" Text="Username" VerticalOptions="Center" FontSize= "20" ></Label>
+                        <Entry Grid.Row="2" x:Name="lbl_username"   VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Entry>
+                        <Image Grid.Row="2" Grid.Column="1"  VerticalOptions="Center" Source="edit_icon"  HorizontalOptions="End"/>
+                        <Label Grid.Row="3" Text="Email" VerticalOptions="Center" FontSize= "20"></Label>
+                        <Entry Grid.Row="4" x:Name="lbl_email"   VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Entry>
+                        <Image Grid.Row="4" Grid.Column="1" VerticalOptions="Center" Source="edit_icon"  HorizontalOptions="End"/>
+                        
+                        <Label Grid.Row="5" Text="Phone" VerticalOptions="Center" FontSize= "20"></Label>
+                        <Entry Grid.Row="6" x:Name="lbl_phone"   VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Entry>
+                        <Image Grid.Row="6"  Grid.Column="1" VerticalOptions="Center" Source="edit_icon" HorizontalOptions="End"/>
+                       
+                    </Grid>
+                    <Button Clicked="Button_Clicked" Text="Edit" BackgroundColor="Green" CornerRadius="20" TextColor="white" FontAttributes="Bold" Padding="20,15,20,15" Margin="80,40,80,0"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

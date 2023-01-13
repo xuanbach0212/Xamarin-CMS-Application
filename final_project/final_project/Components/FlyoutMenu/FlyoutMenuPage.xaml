@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:final_project.Components.FlyoutMenu"
+             xmlns:local_Views="clr-namespace:final_project.Views"
+             Title="FlyoutMenu"
+             x:Class="final_project.Components.FlyoutMenu.FlyoutMenuPage"
+            >
+    <StackLayout>
+        <ListView x:Name="listview" x:FieldModifier="public" Margin="10" HasUnevenRows="True">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FlyoutItemPage}">
+                    <local:FlyoutItemPage Title="Home" IconSource="home_icon.png" TargetPage="{x:Type local_Views:HomePage}"/>
+                    <local:FlyoutItemPage Title="Category" IconSource="categories_icon.png" TargetPage="{x:Type local_Views:CategoryPage}"/>
+                    <local:FlyoutItemPage Title="Product" IconSource="product_icon.png" TargetPage="{x:Type local_Views:ProductPage}"/>
+                    <local:FlyoutItemPage Title="User" IconSource="user_manage_icon.png" TargetPage="{x:Type local_Views:UserPage}"/>
+                    <local:FlyoutItemPage Title="Order" IconSource="order_icon.png" TargetPage="{x:Type local_Views:OrderPage}"/>
+                    <local:FlyoutItemPage Title="Your Profile" IconSource="user_icon.png" TargetPage="{x:Type local_Views:ProfilePage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}"/>
+                            <Label Grid.Column="1" Text="{Binding Title}" FontSize="20" FontAttributes="Bold"
+                                   VerticalOptions="Center" Margin="10,0,10,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

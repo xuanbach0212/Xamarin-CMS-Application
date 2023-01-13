@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout Background="#62C3FF">
+            <Grid Margin="20,10,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Start Your Workday Comfortably" Grid.Column="0" FontAttributes="Bold" TextColor="#F8F9FA" FontSize="30"/>
+                <Image Source="programmer_icon" Grid.Column="1"/>
+            </Grid>
+            <Frame BackgroundColor="White" Padding="0" CornerRadius="27" HorizontalOptions="CenterAndExpand" HasShadow="True" Margin="0,0,0,30">
+                <SearchBar Placeholder="Search something..." HorizontalOptions="Center" />
+            </Frame>
+            <Frame CornerRadius="20" HasShadow="True" HeightRequest="500" BackgroundColor="WhiteSmoke">
+                <Grid RowSpacing="30" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="150"></RowDefinition>
+                        <RowDefinition Height="150"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Quick Start?" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" FontSize="23" FontAttributes="Bold"></Label>
+                    <Frame Grid.Row="1" Grid.Column="0" CornerRadius="15" HasShadow="True" Margin="0,0,10,0">
+                        <StackLayout>
+                            <Image Source="category_new_icon.png" HorizontalOptions="Start" />
+                            <Label x:Name="lbl_category" FontAttributes="Bold" FontSize="19"/>
+                            <Label Text="Category"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" CornerRadius="15" HasShadow="True" Margin="10,0,0,0" >
+                        <StackLayout>
+                            <Image Source="cart_new_icon.png" HorizontalOptions="Start"/>
+                            <Label x:Name="lbl_product" FontAttributes="Bold" FontSize="19"/>
+                            <Label Text="Product"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="0" CornerRadius="15" HasShadow="True"  Margin="0,0,10,0" >
+                        <StackLayout>
+                            <Image Source="order_new_icon.png" HorizontalOptions="Start"/>
+                            <Label x:Name="lbl_order" FontAttributes="Bold" FontSize="19"/>
+                            <Label Text="Order"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="1" CornerRadius="15" HasShadow="True" Margin="10,0,0,0">
+                        <StackLayout>
+                            <Image Source="user_new_icon.png" HorizontalOptions="Start"/>
+                            <Label x:Name="lbl_user" FontAttributes="Bold" FontSize="19"/>
+                            <Label Text="User"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

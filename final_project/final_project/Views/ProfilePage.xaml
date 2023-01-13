@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.ProfilePage" Title="My Profile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+    
+    <StackLayout x:Name="stl_profile">
+
+            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="5,0,5,0">
+                <StackLayout>
+                    <Grid RowSpacing="14">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="2"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="2"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="2"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Grid.ColumnSpan="2" Source="Profile_icon" HorizontalOptions="CenterAndExpand"></Image>
+                        <Image Grid.Row="0" Grid.ColumnSpan="2"  Source="plus_icon" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="120,0,0,20"></Image>
+                        <Label Grid.Row="1" Text="Username" VerticalOptions="Center" FontSize= "20" ></Label>
+                        <Label Grid.Row="2" x:Name="lbl_username" Text="{Binding name}"  VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Label>
+                        <Image Grid.Row="2" Grid.Column="1"  VerticalOptions="Center" Source="edit_icon"  HorizontalOptions="End"/>
+                        <BoxView Grid.Row="3" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="Gray"></BoxView>
+                        <Label Grid.Row="4" Text="Email" VerticalOptions="Center" FontSize= "20"></Label>
+                        <Label Grid.Row="5" x:Name="lbl_email" Text="{Binding email}"  VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Label>
+                        <Image Grid.Row="5" Grid.Column="1" VerticalOptions="Center" Source="edit_icon"  HorizontalOptions="End"/>
+                        <BoxView Grid.Row="6" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="Gray"></BoxView>
+                        <Label Grid.Row="7" Text="Phone" VerticalOptions="Center" FontSize= "20"></Label>
+                        <Label Grid.Row="8" x:Name="lbl_phone" Text="{Binding phone}"  VerticalOptions="Center" FontSize="20" FontAttributes="Bold"></Label>
+                        <Image Grid.Row="8"  Grid.Column="1" VerticalOptions="Center" Source="edit_icon" HorizontalOptions="End"/>
+                        <BoxView Grid.Row="9" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="Gray"></BoxView>
+                    </Grid>
+                    <Button Clicked="Button_Clicked" Text="Logout" BackgroundColor="red" CornerRadius="20" TextColor="white" FontAttributes="Bold" Padding="20,15,20,15" Margin="80,40,80,0"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_project.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HasShadow="True" BackgroundColor="Transparent">
+                <StackLayout>
+                    
+                <Grid RowSpacing="30">
+                    <Grid.RowDefinitions>
+                            <RowDefinition Height="170" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Grid.Column="0" Source="cat_shopping_logo.png" />
+                    <Image Grid.Row="0"  Grid.Column="1" Source="engineer_cat_logo.png" />
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Welcome to CatMS" HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" FontSize="35" TextColor="#1A120B"></Label>
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Use your credentials to login." HorizontalOptions="CenterAndExpand" FontSize="17"/>
+                    <Entry x:Name="txt_email" Placeholder="Enter Email" Grid.Row="3" Grid.ColumnSpan="2" Keyboard="Email"></Entry>
+                    <Entry x:Name="txt_password" Placeholder="Enter Password"  Grid.Row="4" Grid.ColumnSpan="2" IsPassword="True"></Entry>
+                    </Grid>
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox Grid.Row="0" Grid.Column="0"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Remember Me" VerticalOptions="Center" HorizontalOptions="Start" FontSize="17"/>
+                    </Grid>
+                    <Button Clicked="Button_Clicked" BackgroundColor="#82C3EC" CornerRadius="20" Text="Login" Grid.Row="5" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" FontSize="17" Margin="0,20,0,0"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
